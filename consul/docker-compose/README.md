@@ -31,3 +31,33 @@ With this link you can view the UP9 dashboard as a guest without needing credent
 
 ### Observability
 ![Observability](assets/observability.png)
+
+## Training the UP9 Models
+UP9 works by observing service traffic. The more traffic UP9 observes, the more information it has to train its models. To generate traffic, you can simply use the system, or run pre-existing end-to-end tests. 
+
+## Service Contracts
+![service contracts](contract.png)
+See how your services interact with each other based on traffic, as well as export to Swagger format.
+
+## Traffic Log
+![dependency map](traffic.png)
+See the actual traffic observed by UP9 (think of Chrome Dev Tools for your cluster).
+
+## Poking, Troubleshooting and Interacting with your Services
+![interacting with your services in real time](trynow.png)
+Payload is ready to send. Customize it or send it as-is. Poke and interact with your services in real time with immediate feedback.
+
+## Dependency Map
+![dependency map](dmap2.png)
+**<p class="text-center">Example of a service dependency map.</p>**
+
+# What’s Next
+It can take anywhere from a few hours to a few days to fully calibrate the UP9 models. Once models are generated, you’ll receive an email with further instructions.
+
+UP9 should free up some time for you to start a new hobby :) Enjoy!
+# Support
+
+For support, feel free to use any one of the three:
+* Schedule time with an UP9 staff member using this [link](https://calendly.com/up9/support).
+* Email support@up9.com
+* Use our in-app messaging application to start a conversation.
