@@ -27,5 +27,8 @@ UP9 uses only Envoy configuration to subscribe and unsubsribe to traffic events.
 * Demo app is available at http://localhost:8000
 
 
+### The UP9 dashboard
+With this link you can view the UP9 dashboard as a guest without needing credentials: https://up9.app/share/d567a4cb-b4bc-4930-9c19-efd54d9cdac3/lastResults/systems/all/discover
+
 ### Observability
 ![Observability](assets/observability.png)
