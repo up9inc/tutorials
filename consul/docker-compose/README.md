@@ -3,7 +3,7 @@
 This repo demonstrates how to create traffic-inferred tests, contracts, mocks and observability that represent real-life application behavior. 
 
 It includes:
-* A demo microservice app ([WeaveSock](https://microservices-demo.github.io/docs/load-test.html))
+* A demo microservice application ([WeaveSock](https://microservices-demo.github.io/docs/load-test.html))
 * [Consul](https://github.com/hashicorp/consul) configuration files
 
 ## Requirements 
@@ -29,38 +29,3 @@ UP9 uses Envoy configuration to subscribe and unsubsribe to traffic events. UP9 
 A Consul Connect sidecar (with Envoy proxy) is attached to each service and is controlled by the Consul Server.  
 Envoy proxies enforce mTLS communication by only authorized clients to enforce secure communication in the service mesh.
 ![architecture](assets/architecture.png)
-
-### Machine-generated test code
-Test code is automatically generated in Python, Java, Javascript, Golang and Postman.
-![machine-generated test code](tests.png)
-
-# Reliability and root-cause analysis
-### Observability
-![Observability](assets/observability.png)
-
-## Service Contracts
-![service contracts](contract.png)
-See how your services interact with each other based on traffic, as well as export to Swagger format.
-
-## Traffic Log
-![dependency map](traffic.png)
-See the actual traffic observed by UP9 (think of Chrome Dev Tools for your cluster).
-
-## Poking, Troubleshooting and Interacting with your Services
-![interacting with your services in real time](trynow.png)
-Payload is ready to send. Customize it or send it as-is. Poke and interact with your services in real time with immediate feedback.
-
-## Dependency Map
-![dependency map](dmap2.png)
-**<p class="text-center">Example of a service dependency map.</p>**
-
-# What’s Next
-It can take anywhere from a few hours to a few days to fully calibrate the UP9 models. Once models are generated, you’ll receive an email with further instructions.
-
-UP9 should free up some time for you to start a new hobby :) Enjoy!
-# Support
-
-For support, feel free to use any one of the three:
-* Schedule time with an UP9 staff member using this [link](https://calendly.com/up9/support).
-* Email support@up9.com
-* Use our in-app messaging application to start a conversation.
