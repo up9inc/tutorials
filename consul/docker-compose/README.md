@@ -29,7 +29,7 @@ UP9 uses only Envoy configuration, to subscribe and unsubsribe to traffic events
 ### Architecture
 A Consul Connect sidecar (with Envoy proxy) is attached to each service and is controlled by the Consul Server.  
 Envoy proxies enforce mTLS communication by only authorized clients to enforce secure communicate in the service mesh.
-
+![architecture](architecture.png)
 ### Machine-generated test code
 Test code is automatically generated in Python, Java, Javascript, Golang and Postman.
 ![machine-generated test code](tests.png)
