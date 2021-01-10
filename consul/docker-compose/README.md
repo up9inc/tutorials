@@ -24,16 +24,19 @@ It includes:
 * Demo app is available at http://localhost:8000
 
 ## Context
-UP9 uses Envoy configuration to subscribe and unsubsribe to traffic events. Once Envoy (which is running as part of Consul) runs with the provided configuration, UP9 can observe traffic and infer numerous artifacts including tests, contracts, mocks and observability.
+UP9 uses only Envoy configuration, to subscribe and unsubsribe to traffic events. UP9 observes traffic and infer tests, contracts, mocks and observability.
 
-### The UP9 dashboard (example)
-With this link you can view the UP9 dashboard as a guest without needing credentials: https://up9.app/share/d567a4cb-b4bc-4930-9c19-efd54d9cdac3/lastResults/systems/all/discover
+### Architecture
+A Consul Connect sidecar (with Envoy proxy) is attached to each service and is controlled by the Consul Server.  
+Envoy proxies enforce mTLS communication by only authorized clients to enforce secure communicate in the service mesh.
 
+### Machine-generated test code
+Test code is automatically generated in Python, Java, Javascript, Golang and Postman.
+![machine-generated test code](tests.png)
+
+# Reliability and root-cause analysis
 ### Observability
 ![Observability](assets/observability.png)
-
-## Training the UP9 Models
-UP9 works by observing service traffic. The more traffic UP9 observes, the more information it has to train its models. To generate traffic, you can simply use the system, or run pre-existing end-to-end tests. 
 
 ## Service Contracts
 ![service contracts](contract.png)
