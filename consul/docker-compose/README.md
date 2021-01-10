@@ -1,15 +1,15 @@
 # Infer tests, mocks & observability from traffic with UP9, Consul & Docker-Compose
 
-This repo demonstrates how to create traffic-inferred tests, contracts, observability and more that represent real-life application behavior. 
+This repo demonstrates how to create traffic-inferred tests, contracts, mocks and observability that represent real-life application behavior. 
 
 It includes:
-* A demo microservice app (WeaveSock) 
-* HashiCorp Consul configuration file 
+* A demo microservice app ([WeaveSock](https://microservices-demo.github.io/docs/load-test.html))
+* [Consul](https://github.com/hashicorp/consul) configuration files
 
 ## Requirements 
-* An UP9 account - If you don't have one already, you can sign up for free here: https://up9.app/signup
-* UP9 CLI installed - `npm install -g up9`
-* Docker-compose installed
+* An [UP9](https://up9.com/) account - If you don't have one already, you can sign up for free here: https://up9.app/signup
+* UP9 CLI - `npm install -g up9`
+* Docker-compose
 
 ## Steps
 
@@ -21,14 +21,13 @@ It includes:
 ## Using the apps
 
 * Consul UI is available at http://localhost:8500
-* Demo app is available at http://localhost:8000
+* Demo application is available at http://localhost:8000
 
-## Context
-UP9 uses only Envoy configuration, to subscribe and unsubsribe to traffic events. UP9 observes traffic and infer tests, contracts, mocks and observability.
+## Architecture
+UP9 uses Envoy configuration to subscribe and unsubsribe to traffic events. UP9 observes traffic and infer tests, contracts, mocks and observability.
 
-### Architecture
 A Consul Connect sidecar (with Envoy proxy) is attached to each service and is controlled by the Consul Server.  
-Envoy proxies enforce mTLS communication by only authorized clients to enforce secure communicate in the service mesh.
+Envoy proxies enforce mTLS communication by only authorized clients to enforce secure communication in the service mesh.
 ![architecture](assets/architecture.png)
 
 ### Machine-generated test code
