@@ -18,5 +18,5 @@ UP9 uses only Envoy configuration to subscribe and unsubsribe to traffic events.
 
 * Log in to your UP9 account on https://up9.com/.
 * Authenticate your UP9 CLI - In your terminal window - `up9 auth:login`
-* Create the nessesary Envoy configuration files: `up9 tap:create-docker-compose-consul 19001 <give-it-a-name>`
+* Create the nessesary Envoy configuration files: `up9 tap:create-docker-compose-consul 19001 default`
 * Run `docker-compose -f docker-compose.yaml -f docker-compose-up9.yaml up`
