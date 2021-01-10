@@ -25,3 +25,7 @@ UP9 uses only Envoy configuration to subscribe and unsubsribe to traffic events.
 
 * Consul UI is available at http://localhost:8500
 * Demo app is available at http://localhost:8000
+
+
+### Observability
+![Observability](assets/observability.png)
