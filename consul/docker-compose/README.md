@@ -11,7 +11,7 @@ The repo includes:
 * UP9 CLI installed - `npm install -g up9`
 * Docker-compose installed
 
-# Context
+## Context
 UP9 uses only Envoy configuration to subscribe and unsubsribe to traffic events. Once Envoy (which is running as part of Consul) runs with the provided configuration, UP9 can observe traffic and infer numerous artifacts including tests, contracts, mocks and observability.
 
 ## Steps
