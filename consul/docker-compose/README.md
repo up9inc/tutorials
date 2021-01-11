@@ -1,4 +1,4 @@
-# Infer tests, mocks & observability from traffic with UP9, Consul & Docker-Compose
+# Traffic-inferred tests, mocks & observability with UP9, Consul & Docker-Compose
 
 This repo demonstrates how to create traffic-inferred tests, contracts, mocks and observability that represent real-life application behavior. 
 
