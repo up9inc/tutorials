@@ -32,3 +32,5 @@ Envoy proxies enforce mTLS communication by only authorized clients to enforce s
 
 ## Screenshots
 ![Observability](assets/observability.png)
+![Service-Contracts](assets/contracts.png)
+![Traffic Viewer](assets/traffic-viewer.png)
