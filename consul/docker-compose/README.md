@@ -16,7 +16,8 @@ It includes:
 * Log in to your UP9 account on https://up9.com/.
 * Authenticate your UP9 CLI - In your terminal window - `up9 auth:login`
 * Create the necessary Envoy configuration files: `up9 tap:create-docker-compose-consul 19001 <give-it-a-name>`
-* Run `docker-compose -f docker-compose.yaml -f docker-compose-up9.yaml up`
+* Run `docker-compose -f docker-compose.yml -f docker-compose-up9.yml up`
+* When the app fully booted, generate traffic by running `docker-compose -f docker-compose.yml -f docker-compose-sim.yml`
 
 ## Using the apps
 
