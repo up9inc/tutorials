@@ -95,6 +95,7 @@ services:
     image: weaveworksdemos/catalogue-db:0.3.0
     hostname: catalogue-db
     restart: always
+    mem_limit: 100m
     environment:
       - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
       - MYSQL_ALLOW_EMPTY_PASSWORD=true
@@ -115,8 +116,9 @@ services:
     read_only: true
     tmpfs:
       - /tmp:rw,noexec,nosuid
+    mem_limit:  150m
     environment:
-      - JAVA_OPTS=-Xms64m -Xmx128m -XX:+UseG1GC -Djava.security.egd=file:/dev/urandom -Dspring.zipkin.enabled=false
+      - JAVA_OPTS=-Xms64m -Xmx80m -XX:+UseG1GC -Djava.security.egd=file:/dev/urandom -Dspring.zipkin.enabled=false
     networks:
       wsbridge:
         ipv4_address: 10.20.0.12
@@ -136,6 +138,7 @@ services:
     image: mongo:3.4
     hostname: carts-db
     restart: always
+    mem_limit: 100m
     cap_drop:
       - all
     cap_add:
@@ -162,8 +165,9 @@ services:
     read_only: true
     tmpfs:
       - /tmp:rw,noexec,nosuid
+    mem_limit: 150m
     environment:
-      - JAVA_OPTS=-Xms64m -Xmx128m -XX:+UseG1GC -Djava.security.egd=file:/dev/urandom -Dspring.zipkin.enabled=false
+      - JAVA_OPTS=-Xms64m -Xmx80m -XX:+UseG1GC -Djava.security.egd=file:/dev/urandom -Dspring.zipkin.enabled=false
       - PAYMENT_BASE_URL=http://127.0.0.1:15500
       - SHIPPING_BASE_URL=http://127.0.0.1:15600
     networks:
@@ -185,6 +189,7 @@ services:
     image: mongo:3.4
     hostname: orders-db
     restart: always
+    mem_limit: 100m
     cap_drop:
       - all
     cap_add:
@@ -210,8 +215,9 @@ services:
     read_only: true
     tmpfs:
       - /tmp:rw,noexec,nosuid
+    mem_limit: 150m
     environment:
-      - JAVA_OPTS=-Xms64m -Xmx128m -XX:+UseG1GC -Djava.security.egd=file:/dev/urandom -Dspring.zipkin.enabled=false
+      - JAVA_OPTS=-Xms64m -Xmx80m -XX:+UseG1GC -Djava.security.egd=file:/dev/urandom -Dspring.zipkin.enabled=false
     networks:
       wsbridge:
         ipv4_address: 10.20.0.14
@@ -227,37 +233,37 @@ services:
     - "./central_config:/central_config"
     command: ["consul", "connect", "envoy", "-sidecar-for", "shipping_v1"]
     network_mode: "service:shipping"
-  queue-master:
-    image: weaveworksdemos/queue-master:0.3.1
-    hostname: queue-master
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
-    restart: always
-    cap_drop:
-      - all
-    cap_add:
-      - NET_BIND_SERVICE
-    read_only: true
-    tmpfs:
-      - /tmp:rw,noexec,nosuid
-    networks:
-      wsbridge:
-        ipv4_address: 10.20.0.101
-  rabbitmq:
-    image: rabbitmq:3.6.8
-    hostname: rabbitmq
-    restart: always
-    cap_drop:
-      - all
-    cap_add:
-      - CHOWN
-      - SETGID
-      - SETUID
-      - DAC_OVERRIDE
-    read_only: true
-    networks:
-      wsbridge:
-        ipv4_address: 10.20.0.102
+#  queue-master:
+#    image: weaveworksdemos/queue-master:0.3.1
+#    hostname: queue-master
+#    volumes:
+#      - /var/run/docker.sock:/var/run/docker.sock
+#    restart: always
+#    cap_drop:
+#      - all
+#    cap_add:
+#      - NET_BIND_SERVICE
+#    read_only: true
+#    tmpfs:
+#      - /tmp:rw,noexec,nosuid
+#    networks:
+#      wsbridge:
+#        ipv4_address: 10.20.0.101
+#  rabbitmq:
+#    image: rabbitmq:3.6.8
+#    hostname: rabbitmq
+#    restart: always
+#    cap_drop:
+#      - all
+#    cap_add:
+#      - CHOWN
+#      - SETGID
+#      - SETUID
+#      - DAC_OVERRIDE
+#    read_only: true
+#    networks:
+#      wsbridge:
+#        ipv4_address: 10.20.0.102
   payment:
     image: weaveworksdemos/payment:0.4.3
     labels:
@@ -328,17 +334,18 @@ services:
     networks:
       wsbridge:
         ipv4_address: 10.20.0.116
-  user-sim:
-    image: weaveworksdemos/load-test:0.1.1
-    cap_drop:
-      - all
-    read_only: true
-    hostname: user-simulator
-    #command: "-d 60 -r 200 -c 2 -h edge-router"
-    command: "-d 60 -r 200 -c 2 -h edge:8000"
-    networks:
-      wsbridge:
-        ipv4_address: 10.20.0.103
+#  user-sim:
+#    image: weaveworksdemos/load-test:0.1.1
+#    cap_drop:
+#      - all
+#    read_only: true
+#    hostname: user-simulator
+#    #command: "-d 60 -r 200 -c 2 -h edge-router"
+#    command: "-d 60 -r 200 -c 2 -h edge:8000"
+#    networks:
+#      wsbridge:
+#        ipv4_address: 10.20.0.103
+
 networks:
     wsbridge:
         driver: bridge

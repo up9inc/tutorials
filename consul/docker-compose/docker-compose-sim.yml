@@ -1,0 +1,15 @@
+version: "2"
+
+services:
+  user-sim:
+    image: weaveworksdemos/load-test:0.1.1
+    cap_drop:
+      - all
+    read_only: true
+    hostname: user-simulator
+    #command: "-d 60 -r 200 -c 2 -h edge-router"
+    command: "-d 60 -r 200 -c 2 -h edge:8000"
+    networks:
+      wsbridge:
+        ipv4_address: 10.20.0.103
+
