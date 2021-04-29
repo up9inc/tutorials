@@ -43,6 +43,8 @@ Use the IP on any browser: http://\<cluster-ip\>:30007 **(\<cluster-ip\> is the 
 
 ![alt text](assets/working.png "Title")
 
+If the browser is refusing to connect, check to see if the cluster is running. If you've allocated enough memory and CPUs and gave enough time for the cluster to run, you should see the application.
+
 # Install UP9
 
 **Brew:**
