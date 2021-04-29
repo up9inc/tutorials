@@ -35,7 +35,7 @@ Use the fowllowing command to identify the cluster IP:
 $ minikube ip
 <cluster-ip>
 ```
-Use the IP on any browser: http://<cluster-ip>:30007 **(<cluster-ip> is the result of using the `minikube ip` command)**
+Use the IP on any browser: http://\<cluster-ip\>:30007 **(\<cluster-ip\> is the result of using the `minikube ip` command)**
 
 ![alt text](assets/working.png "Title")
 
