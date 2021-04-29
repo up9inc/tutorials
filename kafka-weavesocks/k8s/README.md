@@ -60,7 +60,7 @@ In your UP9 dashboard (https://up9.app), create a new workspace and select the p
 ![UP9 installation by Helm](assets/helm.png)
 Please make sure you choose the correct Helm version, copy this text, and run it in your terminal window.
 
-###Select Namespaces or Services 
+### Select Namespaces or Services 
 A few seconds after your pods are running, your browser screen should change, asking you to select the namespaces or services that UP9 will observe, listening to their traffic.
 Select: `sock-shop` and follow the on-screen instructions
 
