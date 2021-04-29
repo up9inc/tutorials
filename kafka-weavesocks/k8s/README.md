@@ -1,8 +1,8 @@
-# UP9 / Weavesocks / Kafka Demo Envrionment 
+# UP9 / Weavesock / Kafka Demo Environment 
 
-This repository includes all of the artifacts required to deploy Weavesocks, a microservice application, on a Kubernetes cluster as well as a quick tutorial of how to use up9.
+This repository includes all of the artifacts required to deploy Weavesock, a microservice application, on a Kubernetes cluster as well as a quick tutorial of how to use up9.
 
-If you already have a Minikube or a Kubernetes cluster you can skip the part about downloading and installing Minikube in your local envrionment. 
+If you already have a Minikube or a Kubernetes cluster you can skip the part about downloading and installing Minikube in your local environment. 
 
 ## Installing Minikube and Helm
 In this tutorial we are using Helm and Minikube. If you don't have these installed already, follow the instructions in the next paragraph.
@@ -19,7 +19,7 @@ Install HELM: https://helm.sh/docs/intro/install/
 ```bash
 $ minikube start
 ```
-## Deploy Weavesocks
+## Deploy Weavesock
 
 ```bash
 $ kubectl apply -f . -n sock-shop
@@ -35,7 +35,7 @@ Use the fowllowing command to identify the cluster IP:
 $ minikube ip
 <cluster-ip>
 ```
-Use the IP on any browser: http://\<cluster-ip\>:30007 **(\<cluster-ip\> is the result of using the `minikube ip` command)**
+Use the IP on any browser: http://<cluster-ip>:30007 **(<cluster-ip> is the result of using the `minikube ip` command)**
 
 ![alt text](assets/working.png "Title")
 
@@ -49,7 +49,7 @@ $ brew tap up9inc/brew && brew install up9
 ```bash
 $ npm i -g up9
 ```
-If you don't have an account in UP9, sign up to get an account here: https://up9.app/signup. Having an UP9 account is imidiate and free.
+If you don't have an account in UP9, sign up to get an account here: https://up9.app/signup. Having an UP9 account is immediate and free.
 
 ```bash
 $ up9 auth:login
@@ -64,7 +64,7 @@ Please make sure you choose the correct Helm version, copy this text, and run it
 A few seconds after your pods are running, your browser screen should change, asking you to select the namespaces or services that UP9 will observe, listening to their traffic.
 Select: `sock-shop` and follow the on-screen instructions
 
-UP9 works by observing traffic. To generate traffic, you can simply use the application, but we recomand running a small load test: 
+UP9 works by observing traffic. To generate traffic, you can simply use the application, but we recommend running a small load test: 
 
 ```bash
 $ kubectl apply -R -f job/.
