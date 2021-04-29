@@ -57,7 +57,7 @@ $ up9 auth:login
 ## Install UP9 on Weavesock
 In your UP9 dashboard (https://up9.app), create a new workspace and select the prefered installation method
 
-![UP9 installation by Helm](helm.png)
+![UP9 installation by Helm](assets/helm.png)
 Please make sure you choose the correct Helm version, copy this text, and run it in your terminal window.
 
 ###Select Namespaces or Services 
