@@ -69,3 +69,4 @@ UP9 works by observing traffic. To generate traffic, you can simply use the appl
 ```bash
 $ kubectl apply -R -f job/.
 ```
+That's it UP9 is installed
