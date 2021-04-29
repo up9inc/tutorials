@@ -27,6 +27,10 @@ $ kubectl apply -f . -n sock-shop
 
 Wait until the cluster is fully running before continuing. The kafka pod will restart 2-5 times, don't worry about it.
 
+```bash
+$ kubectl get pods -A
+```
+
 ## Test the Applicaton
 To access the front-end of the application:
 
