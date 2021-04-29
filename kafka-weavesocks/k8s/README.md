@@ -17,7 +17,7 @@ Install HELM: https://helm.sh/docs/intro/install/
 ## Starting the Cluster
 
 ```bash
-$ minikube start
+$ minikube start --driver=hyperkit --memory=16384 --cpus=4 --disk-size=100g
 ```
 ## Deploy Weavesock
 
