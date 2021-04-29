@@ -25,7 +25,7 @@ $ minikube start --driver=hyperkit --memory=16384 --cpus=4 --disk-size=100g
 $ kubectl apply -f . -n sock-shop
 ```
 
-The kafka pod will restart 2-5 times, don't worry about it.
+Wait until the cluster is fully running before continuing. The kafka pod will restart 2-5 times, don't worry about it.
 
 ## Test the Applicaton
 To access the front-end of the application:
