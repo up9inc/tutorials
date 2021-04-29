@@ -1,0 +1,32 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: load-front-end
+  namespace: sock-shop
+spec:
+  template:
+    spec:
+      containers:
+      - name: loadfrontend
+        image: weaveworksdemos/load-test:0.1.1
+        command: ["/bin/bash", "-c"]
+        args:
+        - timeout 60s bash -c "while true; do curl -s http://front-end:8079; done"
+      restartPolicy: Never
+  backoffLimit: 2
+
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: load-test
+  namespace: sock-shop
+spec:
+  template:
+    spec:
+      containers:
+      - name: pi
+        image: weaveworksdemos/load-test:0.1.1
+        args: ["-d", "60", "-r", "2002", "-c", "100", "-h", "front-end:8079"]
+      restartPolicy: Never
+  backoffLimit: 2

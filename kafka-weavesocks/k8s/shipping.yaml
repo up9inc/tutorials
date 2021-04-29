@@ -1,0 +1,48 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: shipping
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      name: shipping
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        name: shipping
+    spec:
+      containers:
+      - env:
+        - name: JAVA_OPTS
+          value: -Xms64m -Xmx128m -XX:+UseG1GC -Djava.security.egd
+        - name: KAFKA_HOST
+          value: kafka
+        image: gcr.io/sample-customer-264515/shipping:kafka-demo
+        imagePullPolicy: IfNotPresent
+        name: shipping
+        resources: {}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    name: shipping
+  name: shipping
+spec:
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    name: shipping
+  sessionAffinity: None
+  type: ClusterIP
