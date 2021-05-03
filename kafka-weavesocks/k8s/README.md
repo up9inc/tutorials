@@ -1,10 +1,10 @@
-# UP9 / Weavesock / Kafka Demo Environment 
+# UP9 / Microservices / Kafka Demo Environment 
 
-This repository includes all of the artifacts required to deploy Weavesock, a microservice application, on a Kubernetes cluster as well as a quick tutorial of how to use up9.
+This repository includes all of the artifacts required to deploy a demo microservices application (Weavesock), on a Kubernetes cluster as well as a quick tutorial of how to use UP9.
 
 If you already have a Minikube or a Kubernetes cluster you can skip the part about downloading and installing Minikube in your local environment. 
 
-## Installing Minikube and Helm
+## Pre-reqeuisits: Installing Minikube and Helm
 In this tutorial we are using Helm and Minikube. If you don't have these installed already, follow the instructions in the next paragraph.
 ### MacOS
 ```bash
@@ -14,18 +14,18 @@ $ brew install minikube helm
 Install Minikube: https://minikube.sigs.k8s.io/docs/start/
 Install HELM: https://helm.sh/docs/intro/install/ 
 
-## Starting the Cluster
-
+## Starting Minikube
+Here's an example how to start Minikube:
 ```bash
 $ minikube start --driver=hyperkit --memory=16384 --cpus=4 --disk-size=100g
 ```
-## Deploy Weavesock
+# Deploy the Demo Application (Weavesock)
 
 ```bash
 $ kubectl apply -f . -n sock-shop
 ```
 
-Wait until the cluster is fully running before continuing. The kafka pod will restart 2-5 times, don't worry about it.
+Wait until the cluster is fully running before continuing. The Kafka pod will restart 2-5 times, don't worry about it.
 
 ```bash
 $ kubectl get pods -A
@@ -60,8 +60,8 @@ If you don't have an account in UP9, sign up to get an account here: https://up9
 ```bash
 $ up9 auth:login
 ```
-## Install UP9 on Weavesock
-In your UP9 dashboard (https://up9.app), create a new workspace and select the prefered installation method
+## Install UP9 on the Demo Application
+In your UP9 dashboard (https://up9.app), create a new workspace and select the prefered installation method.
 
 ![UP9 installation by Helm](assets/helm.png)
 Please make sure you choose the correct Helm version, copy this text, and run it in your terminal window.
