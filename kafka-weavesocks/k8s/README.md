@@ -4,7 +4,7 @@ This repository includes all of the artifacts required to deploy a demo microser
 
 If you already have a Minikube or a Kubernetes cluster you can skip the part about downloading and installing Minikube in your local environment. 
 
-## Pre-reqeuisits: Installing Minikube and Helm
+## Pre-requisites: Installing Minikube and Helm
 In this tutorial we are using Helm and Minikube. If you don't have these installed already, follow the instructions in the next paragraph.
 ### MacOS
 ```bash
@@ -31,10 +31,10 @@ Wait until the cluster is fully running before continuing. The Kafka pod will re
 $ kubectl get pods -A
 ```
 
-## Test the Applicaton
+## Test the Application
 To access the front-end of the application:
 
-Use the fowllowing command to identify the cluster IP:
+Use the following command to identify the cluster IP:
 ```bash
 $ minikube ip
 <cluster-ip>
