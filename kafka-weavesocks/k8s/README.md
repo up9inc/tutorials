@@ -13,13 +13,13 @@ See the sections below how to install and set up the prerequisites
 # Deploy the Demo Application (Weavesock)
 
 ```bash
-$ kubectl apply -f . -n sock-shop
+kubectl apply -f . -n sock-shop
 ```
 
 Wait until the cluster is fully running before continuing. The Kafka pod will restart 2-5 times, don't worry about it.
 
 ```bash
-$ kubectl get pods -A
+kubectl get pods -A
 ```
 
 ## Test the Application
@@ -27,7 +27,7 @@ To access the front-end of the application:
 
 Use the following command to identify the cluster IP:
 ```bash
-$ minikube ip
+minikube ip
 <cluster-ip>
 ```
 Use the IP on any browser: http://\<cluster-ip\>:30007 **(\<cluster-ip\> is the result of using the `minikube ip` command)**
