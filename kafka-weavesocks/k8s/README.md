@@ -1,6 +1,8 @@
 # UP9 / Microservices / Kafka Demo Environment 
 
-This repository includes all of the artifacts required to deploy a demo microservices application (Weavesock), on a Kubernetes cluster as well as a quick tutorial of how to use UP9.
+This repository includes:
+- Installing a demo microservices application (Weavesock), on a Kubernetes cluster
+- A quick tutorial of how to use UP9
 
 ## Prerequisites
 - Minikube and Helm
