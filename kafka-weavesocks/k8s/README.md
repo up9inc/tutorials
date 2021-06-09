@@ -2,23 +2,12 @@
 
 This repository includes all of the artifacts required to deploy a demo microservices application (Weavesock), on a Kubernetes cluster as well as a quick tutorial of how to use UP9.
 
-If you already have a Minikube or a Kubernetes cluster you can skip the part about downloading and installing Minikube in your local environment. 
+## Prerequisites
+- Minikube and Helm
+- UP9 CLI and an UP9 account
 
-## Pre-requisites: Installing Minikube and Helm
-In this tutorial we are using Helm and Minikube. If you don't have these installed already, follow the instructions in the next paragraph.
-### MacOS
-```bash
-$ brew install minikube helm
-```
-### Other OSs
-Install Minikube: https://minikube.sigs.k8s.io/docs/start/
-Install HELM: https://helm.sh/docs/intro/install/ 
+See the sections below how to install and set up the prerequisites
 
-## Starting Minikube
-Here's an example how to start Minikube:
-```bash
-$ minikube start --driver=hyperkit --memory=16384 --cpus=4 --disk-size=100g
-```
 # Deploy the Demo Application (Weavesock)
 
 ```bash
@@ -43,23 +32,8 @@ Use the IP on any browser: http://\<cluster-ip\>:30007 **(\<cluster-ip\> is the 
 
 ![alt text](assets/working.png "Title")
 
-If the browser is refusing to connect, check to see if the cluster is running. If you've allocated enough memory and CPUs and gave enough time for the cluster to run, you should see the application.
+If the browser is refusing to connect, check to see if the cluster is running. If you've allocated enough memory and CPUs and give enough time for the cluster to run, you should see the application.
 
-# Install UP9
-
-**Brew:**
-```bash
-$ brew tap up9inc/brew && brew install up9
-```
-**NPM:**
-```bash
-$ npm i -g up9
-```
-If you don't have an account in UP9, sign up to get an account here: https://up9.app/signup. Having an UP9 account is immediate and free.
-
-```bash
-$ up9 auth:login
-```
 ## Install UP9 on the Demo Application
 In your UP9 dashboard (https://up9.app), create a new workspace and select the prefered installation method.
 
@@ -76,3 +50,41 @@ UP9 works by observing traffic. To generate traffic, you can simply use the appl
 $ kubectl apply -R -f job/.
 ```
 That's it UP9 is installed
+
+# Installing and Setting Up the Prerequisite
+
+## Install Minikube and Helm
+
+If you already have a Minikube or a Kubernetes cluster you can skip the part about downloading and installing Minikube in your local environment. 
+
+### Pre-requisites: Installing Minikube and Helm
+In this tutorial we are using Helm and Minikube. If you don't have these installed already, follow the instructions in the next paragraph.
+#### MacOS
+```bash
+$ brew install minikube helm
+```
+#### Other OSs
+Install Minikube: https://minikube.sigs.k8s.io/docs/start/
+Install HELM: https://helm.sh/docs/intro/install/ 
+
+### Starting Minikube
+Here's an example how to start Minikube:
+```bash
+$ minikube start --driver=hyperkit --memory=16384 --cpus=4 --disk-size=100g
+```
+
+## Install UP9
+
+**Brew:**
+```bash
+$ brew tap up9inc/brew && brew install up9
+```
+**NPM:**
+```bash
+$ npm i -g up9
+```
+If you don't have an account in UP9, sign up to get an account here: https://up9.app/signup. Having an UP9 account is immediate and free.
+
+```bash
+$ up9 auth:login
+```
